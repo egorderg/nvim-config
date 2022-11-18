@@ -22,5 +22,3 @@ telescope.setup {
 		},
   },
 }
-
-telescope.load_extension('aerial')

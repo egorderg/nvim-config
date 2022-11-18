@@ -25,14 +25,6 @@ return packer.startup(function(use)
 	-- Theme Manager
 	use 'rktjmp/lush.nvim'
 
-	-- Colorizer
-	use {
-		'norcalli/nvim-colorizer.lua',
-		config = function ()
-			require('colorizer').setup()
-		end
-	}
-
 	-- Common devicons
 	use {
 		'nvim-tree/nvim-web-devicons',
@@ -55,9 +47,7 @@ return packer.startup(function(use)
 	-- Syntax Highlighting
 	use {
 		'nvim-treesitter/nvim-treesitter',
-		requires = {
-			'nvim-treesitter/playground'
-		},
+		run = ':TSUpdate',
     config = function()
 			require("config.treesitter")
 		end,
@@ -94,14 +84,6 @@ return packer.startup(function(use)
 		after = 'nvim-treesitter',
 	}
 
-	-- Dashboard
-	use {
-		'glepnir/dashboard-nvim',
-		config = function()
-			require('config.dashboard')
-		end
-	}
-
 	-- Fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim',
@@ -126,27 +108,6 @@ return packer.startup(function(use)
 		tag = "v3.*",
 		config = function()
 			require('config.bufferline')
-		end
-	}
-
-	-- File Tree
-	use {
-		"nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    requires = {
-			"MunifTanjim/nui.nvim",
-    },
-		config = function()
-			require('config.neotree')
-		end
-  }
-
-	-- Terminal
-	use {
-		'akinsho/toggleterm.nvim',
-		tag = '*',
-		config = function ()
-			require('config.term')
 		end
 	}
 
@@ -185,14 +146,6 @@ return packer.startup(function(use)
 		},
 		config = function()
 			require('config.lsp.setup')
-		end
-	}
-
-	-- LSP Outline
-	use {
-		'stevearc/aerial.nvim',
-		config = function()
-			require('config.aerial')
 		end
 	}
 
