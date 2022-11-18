@@ -34,7 +34,8 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<cr>", {})
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
+	local server_cap = client.server_capabilities
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- Declaration/Definition
@@ -60,19 +61,20 @@ local on_attach = function(_, bufnr)
 	end, bufopts)
 
 	-- Highlight
-	local highlight_name = vim.fn.printf("lsp_document_highlight_%d", bufnr)
-
-	vim.api.nvim_create_augroup(highlight_name, {})
-	vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-		group = highlight_name,
-		buffer = bufnr,
-		callback = function() vim.lsp.buf.document_highlight() end,
-	})
-	vim.api.nvim_create_autocmd("CursorMoved", {
-		group = highlight_name,
-		buffer = bufnr,
-		callback = function() vim.lsp.buf.clear_references() end,
-	})
+	if server_cap.documentHighlightProvider then
+		local highlight_name = vim.fn.printf("lsp_document_highlight_%d", bufnr)
+		vim.api.nvim_create_augroup(highlight_name, {})
+		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+			group = highlight_name,
+			buffer = bufnr,
+			callback = function() vim.lsp.buf.document_highlight() end,
+		})
+		vim.api.nvim_create_autocmd("CursorMoved", {
+			group = highlight_name,
+			buffer = bufnr,
+			callback = function() vim.lsp.buf.clear_references() end,
+		})
+	end
 end
 
 -- Setup LSP Servers

@@ -111,6 +111,24 @@ return packer.startup(function(use)
 		end
 	}
 
+	-- File Tree
+	use {
+		"nvim-tree/nvim-tree.lua",
+    branch = "nightly",
+		config = function()
+			require('config.tree')
+		end
+  }
+
+	-- Terminal
+	use {
+		'akinsho/toggleterm.nvim',
+		tag = '*',
+		config = function ()
+			require('config.term')
+		end
+	}
+
 	-- Snippet Engine
 	use { "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }
 
