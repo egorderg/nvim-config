@@ -49,8 +49,8 @@ vim.keymap.set("n", "<leader>fs", function()
 )
 
 -- Neotree
-vim.keymap.set("n", "<F8>", "<cmd>Neotree toggle<cr>", {})
-vim.keymap.set("n", "<leader>tt", "<cmd>Neotree focus<cr>", {})
+vim.keymap.set("n", "<F8>", "<cmd>NvimTreeToggle<cr>", {})
+vim.keymap.set("n", "<leader>tt", "<cmd>NvimTreeFocus<cr>", {})
 
 -- Aerial
 vim.keymap.set("n", "<F9>", "<cmd>AerialToggle<cr>", {})
@@ -74,4 +74,4 @@ end
 vim.keymap.set("n", "<leader>tf", open_term(10, 'float'), { expr = true })
 vim.keymap.set("n", "<leader>th", open_term(10, 'horizontal'), { expr = true })
 
-vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], {})
+vim.keymap.set("t", "<c-esc>", [[<C-\><C-n>]], {})

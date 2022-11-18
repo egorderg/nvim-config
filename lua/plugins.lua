@@ -131,13 +131,10 @@ return packer.startup(function(use)
 
 	-- File Tree
 	use {
-		"nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    requires = {
-			"MunifTanjim/nui.nvim",
-    },
+		"nvim-tree/nvim-tree.lua",
+    branch = "nightly",
 		config = function()
-			require('config.neotree')
+			require('config.tree')
 		end
   }
 
