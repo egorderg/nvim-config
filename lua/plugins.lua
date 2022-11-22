@@ -22,8 +22,9 @@ return packer.startup(function(use)
 	-- Neovim helper function libary, required for some plugins
 	use 'nvim-lua/plenary.nvim'
 
-	-- Theme Manager
-	use 'rktjmp/lush.nvim'
+	-- Themes
+	use 'folke/tokyonight.nvim'
+	use { 'catppuccin/nvim', as = 'catppuccin' }
 
 	-- Common devicons
 	use {
@@ -101,42 +102,15 @@ return packer.startup(function(use)
 		end
 	}
 
-	-- Bufferline
-	use 'famiu/bufdelete.nvim'
-	use {
-		'akinsho/bufferline.nvim',
-		tag = "v3.*",
-		config = function()
-			require('config.bufferline')
-		end
-	}
-
-	-- File Tree
-	use {
-		"nvim-tree/nvim-tree.lua",
-    branch = "nightly",
-		config = function()
-			require('config.tree')
-		end
-  }
-
-	-- Terminal
-	use {
-		'akinsho/toggleterm.nvim',
-		tag = '*',
-		config = function ()
-			require('config.term')
-		end
-	}
-
 	-- Snippet Engine
-	use { "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }
+	use { "L3MON4D3/LuaSnip", tag = "v1.*" }
 
-	-- LSP Icons
+	-- LSP Extensions
+	use 'glepnir/lspsaga.nvim'
 	use {
 		'onsails/lspkind.nvim',
 		config = function ()
-			require('config.lspkind')
+			require('config.lsp.extensions')
 		end
 	}
 

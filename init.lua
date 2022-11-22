@@ -1,10 +1,11 @@
 local opt = vim.opt
 local g = vim.g
 
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
+g.netrw_browse_split = 0
+g.netrw_banner = 0
+g.netrw_winsize = 255
+g.netrw_liststyle = 3
 
-opt.hidden = true
 opt.number = true
 opt.relativenumber = true
 opt.autoindent = true
@@ -16,10 +17,10 @@ opt.termguicolors = true
 opt.hlsearch = true
 opt.ignorecase = true
 opt.breakindent = true
-opt.updatetime = 300
+opt.updatetime = 50
 opt.signcolumn = "yes"
 opt.clipboard = "unnamedplus"
-opt.sessionoptions = "buffers,curdir,folds,tabpages,winsize"
+opt.sessionoptions = "blank,buffers,curdir,folds,tabpages,winsize"
 
 vim.cmd [[
   augroup YankHighlight
@@ -31,7 +32,22 @@ vim.cmd [[
 require('plugins')
 require('mappings')
 
-local lush_ok, lush = pcall(require, 'lush')
-if lush_ok then
-	lush(require('theme'))
-end
+-- Theme
+
+-- tokyonight
+-- tokyonight-night 
+-- tokyonight-storm 
+-- tokyonight-day   
+-- tokyonight-moon  
+
+-- catppuccin
+-- catppuccin-latte
+-- catppuccin-frappe
+-- catppuccin-macchiato
+-- catppuccin-mocha
+vim.cmd 'colorscheme catppuccin'
+
+-- local lush_ok, lush = pcall(require, 'lush')
+-- if lush_ok then
+-- 	lush(require('theme'))
+-- end

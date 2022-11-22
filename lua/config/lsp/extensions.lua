@@ -1,3 +1,8 @@
+require('lspsaga').init_lsp_saga()
+
+vim.keymap.set('n', 'gr', '<cmd>Lspsaga lsp_finder<cr>', { silent = true })
+vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<cr>', { silent = true })
+
 require('lspkind').init {
 	mode = "symbol",
 	preset = "default",

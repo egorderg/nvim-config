@@ -48,30 +48,9 @@ vim.keymap.set("n", "<leader>fs", function()
 	{}
 )
 
--- Neotree
-vim.keymap.set("n", "<F8>", "<cmd>NvimTreeToggle<cr>", {})
-vim.keymap.set("n", "<leader>tt", "<cmd>NvimTreeFocus<cr>", {})
-
--- Aerial
-vim.keymap.set("n", "<F9>", "<cmd>AerialToggle<cr>", {})
+-- Explore
+vim.keymap.set("n", "<leader>e", "<cmd>Explore<cr>", {})
 
 -- Buffers
-vim.keymap.set("n", "<leader>cc", "<cmd>Bdelete<cr>", {})
-vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", {})
-vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", {})
+vim.keymap.set("n", "<leader>cc", "<cmd>bdelete<cr>", {})
 
--- Terminal
-local open_term = function (size, direction)
-	return function ()
-		local term_id = 1
-		if vim.v.count > 0 then
-			term_id = vim.v.count
-		end
-		return "<cmd>" .. term_id .. "ToggleTerm size=" .. size .. " direction=" .. direction .."<cr>"
-	end
-end
-
-vim.keymap.set("n", "<leader>tf", open_term(10, 'float'), { expr = true })
-vim.keymap.set("n", "<leader>th", open_term(10, 'horizontal'), { expr = true })
-
-vim.keymap.set("t", "<c-esc>", [[<C-\><C-n>]], {})

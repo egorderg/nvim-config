@@ -4,18 +4,18 @@ telescope.setup {
 	defaults = {
     path_display = { "truncate" },
     sorting_strategy = "ascending",
+		layout_strategy = vim.o.lines > 40 and "vertical" or "horizontal",
     layout_config = {
+			preview_cutoff = 1,
       horizontal = {
         prompt_position = "top",
         preview_width = 0.55,
         results_width = 0.8,
       },
       vertical = {
-        mirror = false,
+				prompt_position = "top",
+				mirror = true,
       },
-      width = 0.87,
-      height = 0.80,
-      preview_cutoff = 120,
     },
 		file_ignore_patterns = {
 			"node_modules",
