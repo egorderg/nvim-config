@@ -39,21 +39,20 @@ local on_attach = function(client, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- Declaration/Definition
-	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-
-	vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufopts)
+	-- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+	-- vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufopts)
 	-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
 	-- vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 	vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, bufopts)
 
 	-- Code Actions
-	vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, bufopts)
+	-- vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set("n", "<leader>lh", vim.lsp.buf.signature_help, bufopts)
-	vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, bufopts)
+	-- vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, bufopts)
 
 	-- Hover
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	-- vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 
 	-- Format
 	vim.keymap.set("n", "<space>lf", function()
