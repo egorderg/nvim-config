@@ -89,6 +89,9 @@ return packer.startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.0',
+		requires = {
+			'nvim-telescope/telescope-file-browser.nvim',
+		},
 		config = function ()
 			require('config.telescope')
 		end

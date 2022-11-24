@@ -4,7 +4,6 @@ local g = vim.g
 g.netrw_browse_split = 0
 g.netrw_banner = 0
 g.netrw_winsize = 255
-g.netrw_liststyle = 3
 
 opt.number = true
 opt.relativenumber = true
@@ -45,7 +44,7 @@ require('mappings')
 -- catppuccin-frappe
 -- catppuccin-macchiato
 -- catppuccin-mocha
-vim.cmd 'colorscheme catppuccin'
+vim.cmd 'colorscheme tokyonight-moon'
 
 -- local lush_ok, lush = pcall(require, 'lush')
 -- if lush_ok then

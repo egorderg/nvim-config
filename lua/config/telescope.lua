@@ -17,8 +17,10 @@ telescope.setup {
 				mirror = true,
       },
     },
-		file_ignore_patterns = {
-			"node_modules",
+		preview = {
+			filesize_limit = 1,
 		},
   },
 }
+
+require('telescope').load_extension 'file_browser'

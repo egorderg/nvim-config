@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>fF", function ()
 	builtin.find_files { hidden = true, no_ignore = true }
 end, {})
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>ft", '<cmd>Telescope file_browser<cr>', {})
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
@@ -48,9 +49,28 @@ vim.keymap.set("n", "<leader>fs", function()
 	{}
 )
 
+-- Split
+vim.keymap.set('n', '<leader>sh', '<cmd>vsplit<cr>', {})
+vim.keymap.set('n', '<leader>sv', '<cmd>split<cr>', {})
+
 -- Explore
 vim.keymap.set("n", "<leader>e", "<cmd>Explore<cr>", {})
 
 -- Buffers
 vim.keymap.set("n", "<leader>cc", "<cmd>bdelete<cr>", {})
+vim.keymap.set("n", "<leader>ca", "<cmd>%bd|e#|bd#<cr>", {})
+
+-- Terminal
+local function open_term()
+	if vim.fn.executable('zsh') == 1 then
+		vim.cmd('e term://zsh')
+	else
+		vim.cmd('e term://bash')
+	end
+end
+
+vim.keymap.set("n", "<leader>tt", open_term, {})
+vim.keymap.set('n', '<leader>tf', '<cmd>e term://ranger<cr>', {})
+vim.keymap.set('n', '<leader>tg', '<cmd>e term://lazygit<cr>', {})
+vim.keymap.set('t', '<esc><esc>', [[<C-\><C-n>]], {})
 
