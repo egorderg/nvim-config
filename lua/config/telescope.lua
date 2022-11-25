@@ -4,7 +4,7 @@ telescope.setup {
 	defaults = {
     path_display = { "truncate" },
     sorting_strategy = "ascending",
-		layout_strategy = vim.o.lines > 40 and "vertical" or "horizontal",
+		layout_strategy = vim.o.lines > 60 and "vertical" or "horizontal",
     layout_config = {
 			preview_cutoff = 1,
       horizontal = {
@@ -19,6 +19,12 @@ telescope.setup {
     },
 		preview = {
 			filesize_limit = 1,
+		},
+		mappings = {
+			n = {
+				["<leader>sh"] = "select_vertical",
+				["<leader>sv"] = "select_horizontal",
+			},
 		},
   },
 }

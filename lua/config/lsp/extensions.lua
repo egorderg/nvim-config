@@ -1,4 +1,24 @@
-require('lspsaga').init_lsp_saga()
+require('lspsaga').init_lsp_saga({
+	code_action_lightbulb = {
+		enable = false,
+	},
+	finder_action_keys = {
+		open = {'o', '<CR>'},
+		vsplit = '<leader>sh',
+		split = '<leader>sv',
+		quit = {'q', '<ESC>'},
+	},
+	code_action_keys = {
+		quit = 'q',
+		exec = '<CR>',
+	},
+	definition_action_keys = {
+		edit = '<leader>o',
+		vsplit = '<leader>sh',
+		split = '<leader>sv',
+		quit = 'q',
+	},
+})
 
 vim.keymap.set('n', 'gr', '<cmd>Lspsaga lsp_finder<cr>', { silent = true })
 vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<cr>', { silent = true })
