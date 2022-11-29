@@ -1,9 +1,11 @@
 local opt = vim.opt
 local g = vim.g
 
-g.netrw_browse_split = 0
-g.netrw_banner = 0
-g.netrw_winsize = 255
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+-- g.netrw_browse_split = 0
+-- g.netrw_banner = 0
+-- g.netrw_winsize = 255
 
 opt.number = true
 opt.relativenumber = true
@@ -50,3 +52,5 @@ vim.cmd 'colorscheme tokyonight-moon'
 -- if lush_ok then
 -- 	lush(require('theme'))
 -- end
+
+require('settings_loader')

@@ -108,3 +108,6 @@ mason_ls.setup_handlers({
 null_ls.setup({
 	on_attach = on_attach,
 })
+
+-- Custom LSP Config
+require('config.lsp.dartls')(on_attach, capabilities)

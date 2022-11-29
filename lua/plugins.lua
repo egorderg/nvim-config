@@ -30,20 +30,18 @@ return packer.startup(function(use)
 	use {
 		'nvim-tree/nvim-web-devicons',
 		config = function()
-			require('nvim-web-devicons').setup({
-				color_icons = true,
-			})
+			require('config.icons')
 		end
 	}
 
-	-- Displays indents like spaces or tabs
-	use {
-		"lukas-reineke/indent-blankline.nvim",
-		event = 'BufEnter',
-		config = function()
-			require('config.indent-blankline')
-		end
-	}
+	-- -- Displays indents like spaces or tabs
+	-- use {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	event = 'BufEnter',
+	-- 	config = function()
+	-- 		require('config.indent-blankline')
+	-- 	end
+	-- }
 
 	-- Syntax Highlighting
 	use {
@@ -79,19 +77,16 @@ return packer.startup(function(use)
 		end
 	}
 
-	-- Autotags
-	use {
-		'windwp/nvim-ts-autotag',
-		after = 'nvim-treesitter',
-	}
+	-- -- Autotags
+	-- use {
+	-- 	'windwp/nvim-ts-autotag',
+	-- 	after = 'nvim-treesitter',
+	-- }
 
 	-- Fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.0',
-		requires = {
-			'nvim-telescope/telescope-file-browser.nvim',
-		},
 		config = function ()
 			require('config.telescope')
 		end
@@ -102,6 +97,14 @@ return packer.startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		config = function()
 			require('config.lualine')
+		end
+	}
+
+	-- File Tree
+	use {
+		'nvim-tree/nvim-tree.lua',
+		config = function ()
+			require('config.tree')
 		end
 	}
 

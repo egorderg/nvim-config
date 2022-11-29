@@ -11,11 +11,10 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", {})
 vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", {})
 vim.keymap.set("n", "<leader>ch", "<cmd>checkhealth<cr>", {})
 vim.keymap.set("n", "<leader>h", "<cmd>noh<cr>", {})
-
--- Packer
-vim.keymap.set("n", "<leader>pi", "<cmd>PackerInstall<cr>", {})
-vim.keymap.set("n", "<leader>ps", "<cmd>PackerSync<cr>", {})
-vim.keymap.set("n", "<leader>pc", "<cmd>PackerCompile<cr>", {})
+vim.keymap.set("v", "<leader>p", "\"ap", {})
+vim.keymap.set("n", "<leader>p", "\"ap", {})
+vim.keymap.set("v", "<leader>d", "\"ad", {})
+vim.keymap.set("v", "<leader>y", "\"ay", {})
 
 -- Mason
 vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", {})
@@ -53,8 +52,9 @@ vim.keymap.set("n", "<leader>fs", function()
 vim.keymap.set('n', '<leader>sh', '<cmd>vsplit<cr>', {})
 vim.keymap.set('n', '<leader>sv', '<cmd>split<cr>', {})
 
--- Explore
-vim.keymap.set("n", "<leader>e", "<cmd>Explore<cr>", {})
+-- Tree
+vim.keymap.set("n", "<leader>et", "<cmd>NvimTreeToggle<cr>", {})
+vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeFocus<cr>", {})
 
 -- Buffers
 vim.keymap.set("n", "<leader>cc", "<cmd>bdelete<cr>", {})

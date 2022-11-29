@@ -21,5 +21,5 @@ require('nvim-treesitter.configs').setup {
   autopairs = { enable = true },
   autotag = { enable = true },
   incremental_selection = { enable = true },
-  indent = { enable = false },
+  indent = { enable = true },
 }

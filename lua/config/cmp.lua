@@ -25,19 +25,20 @@ cmp.setup({
 		select = false,
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 	},
 	formatting = {
 		fields = { 'kind', 'abbr', 'menu' },
 		format = lspkind.cmp_format({
 			mode = 'symbol',
-			max_width = 50,
+			max_width = 30,
 			before = function(entry, vim_item)
 				local word = entry:get_insert_text()
 				if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
 					word = vim.lsp.util.parse_snippet(word)
 				end
 				word = str.oneline(word)
+				word = string.sub(word, 1, 30)
 
 				if
 					entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet

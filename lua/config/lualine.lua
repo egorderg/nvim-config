@@ -43,11 +43,13 @@ require('lualine').setup {
 				function ()
 					local parsers = require('nvim-treesitter.info').installed_parsers()
 					local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+
 					for _, parser in ipairs(parsers) do
 						if buf_ft == parser then
 							return ''
 						end
 					end
+
 					return ''
 				end
 			}
